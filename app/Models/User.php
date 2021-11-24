@@ -7,9 +7,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Prettus\Repository\Contracts\Transformable;
 
-class Usera extends Authenticatable
+class User extends Authenticatable implements Transformable
 {
+    use \Prettus\Repository\Traits\TransformableTrait;
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
