@@ -174,7 +174,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        // L5-repository Provides,
+        \App\Providers\RepositoryServiceProvider::class,
     ],
 
     /*
