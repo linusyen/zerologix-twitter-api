@@ -57,4 +57,15 @@ class TweetController extends Controller
 
         return $this->success($tweet);
     }
+
+    /**
+     * @param int $id
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getTweets(int $id): \Illuminate\Http\JsonResponse
+    {
+        $tweets = $this->tweetService->getTweets($id);
+
+        return $this->success($tweets);
+    }
 }

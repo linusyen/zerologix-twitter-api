@@ -34,4 +34,13 @@ class TweetService
     {
         return $this->tweet->create($params);
     }
+
+    /**
+     * @param int $id
+     * @return mixed
+     */
+    public function getTweets(int $id)
+    {
+        return $this->tweet->findByField('user_id', $id);
+    }
 }
