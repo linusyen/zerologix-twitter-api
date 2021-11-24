@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/oauth/{platform}', 'OauthController@redirect');
+Route::get('/oauth/{platform}/callback', 'OauthController@callback');
