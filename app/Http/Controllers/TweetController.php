@@ -68,4 +68,15 @@ class TweetController extends Controller
 
         return $this->success($tweets);
     }
+
+    /**
+     * @param int $id
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getTimeline(int $id): \Illuminate\Http\JsonResponse
+    {
+        $tweets = $this->tweetService->getTimeline($id);
+
+        return $this->success($tweets);
+    }
 }

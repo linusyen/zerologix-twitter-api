@@ -21,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/tweets', 'TweetController@create');
 
 Route::get('/users/{id}/tweets', 'TweetController@getTweets');
+Route::get('/users/{id}/timeline', 'TweetController@getTimeline');

@@ -43,4 +43,19 @@ class TweetService
     {
         return $this->tweet->findByField('user_id', $id);
     }
+    
+    /**
+     * @param int $id
+     * @return mixed
+     */
+    public function getTimeline(int $id)
+    {
+        // get followed users id
+        $followings = $this->following->findByField('user_id', $id);
+        $userIds = array_column($followings->toArray(), 'followed_id');
+        // add current user id into $userIds array
+        $userIds[] = $id;
+
+        return $this->tweet->orderBy('created_at', 'desc')->findWhereIn('user_id', $userIds);
+    }
 }
